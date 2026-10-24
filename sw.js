@@ -7,7 +7,7 @@
 const V=new URL(self.location.href).searchParams.get('v')||'0';
 const CACHE='raqiyoun-'+V;
 const ASSETS=[
- './','JAFRNADALI.html','manifest.json','favicon.ico',
+ './','index.html','manifest.json','favicon.ico',
  'icons/icon-192.png','icons/icon-512.png','icons/icon-maskable-512.png',
  'assets/css/base.css','assets/css/jafrnadali.css','assets/css/pwa.css','assets/css/updates.css',
  'assets/js/jafr-core.js','assets/js/jafr-ui.js','assets/js/pwa.js','assets/js/protect.js','assets/js/updater.js','assets/js/updates.js'
@@ -30,7 +30,7 @@ self.addEventListener('fetch',e=>{
   e.respondWith(fetch(req).then(r=>{
    if(r.ok){const cp=r.clone();caches.open(CACHE).then(c=>c.put(req,cp))}
    return r;
-  }).catch(()=>caches.match(req,{ignoreSearch:true}).then(r=>r||caches.match('JAFRNADALI.html'))));
+  }).catch(()=>caches.match(req,{ignoreSearch:true}).then(r=>r||caches.match('index.html'))));
   return;
  }
  // سایر فایل‌ها: از کش بخوان و هم‌زمان تازه کن
