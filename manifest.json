@@ -1,0 +1,19 @@
+{
+  "id": "./",
+  "name": "راقیون علوم و فنون رحمانی",
+  "short_name": "راقیون",
+  "description": "جفر ناد علی، ابجد، طالعنامه و سایر ابزارهای راقیون",
+  "lang": "fa",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#2a5d9f",
+  "background_color": "#0c5648",
+  "icons": [
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}
