@@ -1,20 +1,24 @@
 /* ============================================================
    استایل مخصوص صفحهٔ جفر ناد علی: جدول ریسپانسیو + کادر آیات
    ============================================================ */
-.tablewrap{margin-top:12px;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
-.chunk{margin:0 auto 18px;max-width:calc(var(--k,8) * 56px);container-type:inline-size}
-.chunk-h{font-size:.8rem;opacity:.75;margin:0 0 5px;text-align:right}
-.tablewrap table{border-collapse:collapse;table-layout:fixed;width:100%;direction:rtl}
-.tablewrap td{border:1px solid rgba(128,128,128,.5);text-align:center;padding:0;overflow:hidden}
-.tablewrap tr.tt td{border-bottom:0;text-align:right;padding:4px 8px;font-size:clamp(11px,3.3vw,13px);line-height:1.5;font-weight:700;background:rgba(128,128,128,.14)}
-.tablewrap tr.tt .rn{opacity:.6;margin-inline-end:.4em}
-/* اندازهٔ قلم بر اساس عرض واقعی هر خانه (خانه‌های کوچک ← قلم کوچک‌تر، بدون سرریز) */
-.tablewrap tr.cr td{padding:.38em 0;font-size:clamp(16px,4.6vw,20px);line-height:1.3}
-.tablewrap tr.cr td.num{font-size:clamp(14px,4vw,17px);opacity:.9;font-variant-numeric:tabular-nums}
-@supports (width:1cqw){
- .tablewrap tr.cr td{font-size:clamp(14px,calc(100cqw / var(--k,8) * .52),22px)}
- .tablewrap tr.cr td.num{font-size:clamp(12px,calc(100cqw / var(--k,8) * .42),18px)}
-}
+/* ---- جدول: همیشه کامل؛ در صورت نیاز داخل کادر خودش اسکرول افقی دارد ---- */
+.scroll-hint{margin:10px 0 0;font-size:.82rem;color:var(--muted,#5d6678)}
+.scroll-hint[hidden]{display:none}
+.tablewrap{margin-top:8px;width:100%;max-width:100%;overflow-x:auto;overflow-y:hidden;
+ -webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;touch-action:pan-x pan-y;
+ border:1px solid rgba(128,128,128,.35);border-radius:10px}
+.tablewrap:empty{display:none}
+.tablewrap table{border-collapse:collapse;table-layout:fixed;width:100%;
+ min-width:calc(var(--n,8) * 38px);direction:rtl;margin:0}
+/* بدون overflow:hidden تا sticky عنوان‌ها کار کند */
+.tablewrap td{border:1px solid rgba(128,128,128,.5);text-align:center;padding:0}
+.tablewrap td.pad{border:0;background:transparent}
+.tablewrap tr.tt td{border-bottom:0;text-align:right;padding:0;background:rgba(128,128,128,.14)}
+.tablewrap tr.tt .tt-in{position:sticky;right:0;display:inline-block;box-sizing:border-box;
+ max-width:calc(100vw - 36px);padding:4px 8px;font-size:13px;line-height:1.5;font-weight:700;white-space:normal}
+.tablewrap tr.tt .rn{opacity:.6;margin-left:.4em}
+.tablewrap tr.cr td{padding:7px 0;font-size:19px;line-height:1.3}
+.tablewrap tr.cr td.num{font-size:16px;opacity:.9;font-variant-numeric:tabular-nums}
 .tablewrap tr.cr td.cut{text-decoration:line-through;opacity:.5}
 .tablewrap tr.cr td.split{border-left:3px solid currentColor}
 .tablewrap tr.mark td{background:rgba(42,93,159,.09)}
@@ -31,6 +35,8 @@
 .bismillah-box .ayah-line::after{content:' ﴾';color:#d8b46a}
 .bismillah-box .ayah-line.plain::before,.bismillah-box .ayah-line.plain::after{content:none}
 @media (max-width:480px){
+ .page{padding-left:8px;padding-right:8px}
+ .panel{padding:12px}
  .bismillah-box{padding:18px 12px 16px}
  .bismillah-box .bism-line{font-size:18px}
  .bismillah-box .ayah-line{font-size:17px;line-height:2.1}
